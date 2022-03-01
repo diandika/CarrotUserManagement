@@ -1,27 +1,16 @@
 package UserOperation;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public class UserList {
-    private List<User> userList;
+    private static ArrayList<User> userList = new ArrayList<>();
+    private static ArrayList<PointHistory> pointHistoryList = new ArrayList<>();
 
-    /**
-     * make new user list
-     */
-    public UserList(){
-
+    public static void transaction(User sender, User recipient, int points){
+        sender.sendPoint(recipient, points);
+        PointHistory pointHistory = new PointHistory(sender, recipient, points);
+        pointHistoryList.add(pointHistory);
     }
-
-    /** show user list information
-     *
-     * @return string of user information
-     */
-    public String toString(){
-
-
-        return "string";
-    }
-
 
     public static void main(String []args){
         System.out.println("Hello World");
