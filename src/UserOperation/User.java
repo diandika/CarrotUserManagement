@@ -12,7 +12,9 @@ public class User {
      * make new user
      */
     public User(String name, int ID, int point){
-
+        this.name = name;
+        this.ID = ID;
+        this.point = point;
     }
 
     /** subtract own point, make history log and store to history list
@@ -39,7 +41,6 @@ public class User {
      */
     public List<PointHistory> getPointHistory(){
 
-
         return pointHistory;
     }
 
@@ -47,8 +48,6 @@ public class User {
      * @return print users data to output
      */
     public String toString(){
-
-
-        return "string";
+        return "ID = " + this.ID + " | Name = " + this.name + " | Points = " + this.point;
     }
 }

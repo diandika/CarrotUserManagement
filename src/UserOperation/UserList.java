@@ -1,5 +1,6 @@
 package UserOperation;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class UserList {
@@ -17,13 +18,17 @@ public class UserList {
      * @return string of user information
      */
     public String toString(){
-
-
         return "string";
     }
 
-
     public static void main(String []args){
-        System.out.println("Hello World");
+
+        ArrayList<User> users = new ArrayList<>();
+        users.add(new User("Adimas", 1, 50));
+        users.add(new User("Dicky", 2, 50));
+
+        for (User user: users) {
+            System.out.println(user);
+        }
     }
 }
