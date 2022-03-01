@@ -1,16 +1,17 @@
 package UserOperation;
 
 import java.util.ArrayList;
+
 import java.util.List;
 
 public class UserList {
-    private List<User> userList;
+    private static ArrayList<User> userList = new ArrayList<>();
+    private static ArrayList<PointHistory> pointHistoryList = new ArrayList<>();
 
-    /**
-     * make new user list
-     */
-    public UserList(){
-
+    public static void transaction(User sender, User recipient, int points){
+        sender.sendPoint(recipient, points);
+        PointHistory pointHistory = new PointHistory(sender, recipient, points);
+        pointHistoryList.add(pointHistory);
     }
 
     /** show user list information
