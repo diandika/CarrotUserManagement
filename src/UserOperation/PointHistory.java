@@ -15,15 +15,15 @@ public class PointHistory {
      * @param senderUser
      * @param point
      */
-//    public PointHistory(User senderUser, User recipientUser, int point){
-//        this.timestamp = new Timestamp(new Date().getTime());
-//        this.senderUser = senderUser;
-//        this.recipientUser = recipientUser;
-//        this.point = point;
-//    }
+    public PointHistory(User senderUser, User recipientUser, int point){
+        this.timestamp = new Timestamp(new Date().getTime());
+        this.senderUser = senderUser;
+        this.recipientUser = recipientUser;
+        this.point = point;
+    }
 
-//    public String toString(){
-//
-////        return this.timestamp + ":: " + senderUser.getName() + " send " + this.point + " carrots to " + recipientUser.getName();
-//    }
+    public String toString(){
+
+        return this.timestamp + ":: " + senderUser.getName() + " send " + this.point + " carrots to " + recipientUser.getName();
+    }
 }

@@ -6,7 +6,6 @@ public class User {
     private String name;
     private int ID;
     private int point;
-    private List<PointHistory> pointHistory;
 
     /**
      * make new user
@@ -17,31 +16,34 @@ public class User {
         this.point = point;
     }
 
+    /** get name value
+     *
+     * @return name
+     */
+    public Object getName() {
+        return name;
+    }
+
+    public void setPoint(int point) {
+        this.point = point;
+    }
+
     /** subtract own point, make history log and store to history list
      *
      * @param recipient
      * @param sumPoints
      */
     public void sendPoint(User recipient, int sumPoints){
-
+        setPoint(this.point - sumPoints);
+        recipient.getPoint(sumPoints);
     }
 
     /** add own point, make history log and store to history list
      *
-     * @param sender
      * @param sumPoints
      */
-    public void getPoint(User sender, int sumPoints){
-
-    }
-
-    /**
-     *
-     * @return get point history information
-     */
-    public List<PointHistory> getPointHistory(){
-
-        return pointHistory;
+    public void getPoint(int sumPoints){
+        setPoint(this.point + sumPoints);
     }
 
     /**
